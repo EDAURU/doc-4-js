@@ -19,7 +19,7 @@
                         + "\nname: " + f.name
                         + "\ntype: " + f.type
                         + "\nsize: " + f.size + " bytes"
-                        + "\nstarts with: " + contents.substr(1, contents.indexOf("n"))
+                        + "\nstarts with: " + contents.substr(1, contents.indexOf(" "))
                 );
             };
             r.readAsText(f);
