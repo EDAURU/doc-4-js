@@ -1,6 +1,7 @@
 {
   "name": "doc-4-js",
   "version": "0.0.0",
+  "description": "A library to help developers to add documentation to their javascript code",
   "homepage": "https://github.com/EDAURU/doc-4-js",
   "authors": [
     "Alberto Bonsanto",
