@@ -1,0 +1,94 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Doc 4 JS</title>
+
+		<link rel="icon" href="">
+		<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+	</head>
+
+	<body>
+
+		<!-- This allows the CSS configuration to be size-aware -->
+		<div class="container">
+
+			<!-- The header of the webpage goes here -->
+			<div class="page-header">
+				<img src="img/doc4js.png" alt="Doc-4-JS" style="margin-left:auto;margin-right:auto;display:block;">
+			</div>
+
+			<!-- Introduction to the application -->
+
+				<!--
+			<p>This is a web interface to help you generate a documentation API. This application was developed by CEDAURU for public use.</p>
+				-->
+
+			<!-- "This is just a test" alert -->
+			<div class="alert alert-warning">This is a beta version of the official web application. You can suggest edits by writing an email to this address: <strong>lascariopacheco@hotmail.com</strong></div>
+
+			<ul class="nav nav-tabs">
+				<li><a href="">Text</a></li>
+				<li class="active"><a href="">File</a></li>
+				<li><a href="">Changelog</a></li>
+			</ul>
+
+			<!-- The collection of tabs and their respective contents can be found below -->
+			<div class="tab-content" style="text-align:center;">
+
+				<br>
+		
+				<!-- 
+						Text input tab content is shown below; if you want to see this one,
+						change the class to "control-group tab-pane active"
+				-->
+				<div class="control-group tab-pane" id="codeinput">
+					<label for="inputcode" class="control-label">Code</label>
+					<div class="controls">
+						<!-- TODO: DOUBLE CLASS DEFINITION, LASCARIO FIX IT!-->
+						<textarea name="inputcode" class="span10" id="inputcode" cols="80" rows="10" class="input"></textarea>
+						<span class="help-block">Paste your JS in the area above</span>
+					</div>	
+				</div>
+
+				<!-- 
+						File input tab content is shown below; if you want to see this one,
+						change the class to "control-group tab-pane active"
+						(is set by default)
+				-->
+				<div class="control-group tab-pane active" id="fileinput">
+					<label for="file_input_wrapper" class="control-label">File</label>
+					<div id="file_input_wrapper" class="well">
+						<input class="input" type="file">
+					</div>
+					<span class="help-block">Submit a file for processing, we'll take care of the rest :)</span>
+				</div>
+				<br>
+
+				<!-- Documentation output section is shown below -->
+				<label for="outputcode" class="control-label">Documentation File</label>
+				<div class="controls">
+					<!-- TODO: DOUBLE CLASS DEFINITION, LASCARIO FIX IT!-->
+					<textarea name="outputcode" class="span10" id="outputcode" cols="80" rows="10" class="input"></textarea>
+					<span class="help-block">The documentation in HTML format appears in the area above</span>
+				</div>
+
+				<br>
+
+				<!-- Documentation generation options are shown below -->
+				<div class="well">
+					<button class="btn btn-primary btn-large" style="background-color:#56EA00;border-color:#4ECC00;"><strong>Generate</strong></button>
+					<button class="btn btn-primary btn-large" style="background-color:#FF0026;border-color:#E00021;">Download as <strong>.PDF</strong></button>
+				</div>
+
+			</div>
+
+			<!-- The footer of the webpages goes here -->			
+			<div class="page-header" style="text-align:center;">
+				<p>Created by <strong>CEDAURU</strong> | 2014</p>
+			</div>
+
+		</div>
+	</body>	
+
+</html>
