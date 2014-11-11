@@ -1,0 +1,31 @@
+{
+  "name": "doc-4-js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/EDAURU/doc-4-js",
+  "authors": [
+    "Alberto Bonsanto",
+    "Andres ortega",
+    "Lascario Pacheco",
+    "Jubert Perez",
+    "Jonh Jordan",
+    "Orangel Marquez",
+    "Rainier Araujo"
+  ],
+  "keywords": [
+    "documentation",
+    "javascript",
+    "annotation"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.0"
+  }
+}
