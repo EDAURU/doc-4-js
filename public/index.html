@@ -1,109 +1,115 @@
 <html>
 
-	<head>
-      <meta charset="utf-8">
-      <title>Doc 4 JS</title>
+<head>
+    <meta charset="utf-8">
+    <title>Doc 4 JS</title>
 
-      <link rel="icon" href="">
-      <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
-      
-      <!-- Scripts -->
-      <script type="text/javascript" src="Responses.js"></script>
-	</head>
+    <link rel="icon" href="">
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
 
-	<body>
+    <!-- Scripts -->
+    <script type="text/javascript" src="Responses.js"></script>
+</head>
 
-		<!-- This allows the CSS configuration to be size-aware -->
-		<div class="container">
-          
-          <dialog id="outputContent" style="top:20%;width:50%;height:90%;">
-            Hola :)  
-          </dialog>
+<body>
 
-			<!-- The header of the web page goes here -->
-			<div class="page-header">
-				<img src="img/doc4js.png" alt="Doc-4-JS" style="margin-left:auto;margin-right:auto;display:block;">
-			</div>
+<!-- This allows the CSS configuration to be size-aware -->
+<div class="container">
 
-			<!-- Introduction to the application -->
+    <dialog id="outputContent" style="top:20%;width:50%;height:90%;">
+        Hola :)
+    </dialog>
 
-				<!--
-			<p>This is a web interface to help you generate a documentation API. This application was developed by CEDAURU for public use.</p>
-				-->
+    <!-- The header of the web page goes here -->
+    <div class="page-header">
+        <img src="img/doc4js.png" alt="Doc-4-JS" style="margin-left:auto;margin-right:auto;display:block;">
+    </div>
 
-			<!-- "This is just a test" alert -->
-			<div class="alert alert-warning">This is a beta version of the official web application. You can suggest edits by writing an email to the following address: <strong>lascariopacheco@hotmail.com</strong></div>
+    <!-- Introduction to the application -->
 
-			<ul class="nav nav-tabs" style="cursor:pointer;">
-				<li id="textOption" onclick="hideTab('fileInput');setClassName('fileInput', 'undefined');showTab('codeInput');setClassName('textOption', 'active');" class="active"><a>Text</a></li>
-				<!--<li id="fileoption" onclick="hideTab('codeinput');setClassName('textoption', 'undefined');showTab('fileinput');setClassName('fileoption', 'active');"><a>File</a></li>-->
-				<li onclick="alert('Feature in development');"><a>What's new?</a></li>
-			</ul>
+    <!--
+<p>This is a web interface to help you generate a documentation API. This application was developed by CEDAURU for public use.</p>
+    -->
 
-			<!-- The collection of tabs and their respective contents can be found below -->
-			<div class="tab-content" style="text-align:center;">
+    <!-- "This is just a test" alert -->
+    <div class="alert alert-warning">This is a beta version of the official web application. You can suggest edits by
+        writing an email to the following address: <strong>lascariopacheco@hotmail.com</strong></div>
 
-				<br>
-		
-				<!-- 
-						Text input tab content is shown below; if you want to see this one,
-						change the class to "control-group tab-pane active"
-				-->
-				<div class="control-group tab-pane active" id="codeInput">
-					<label for="inputCode" class="control-label">Code</label>
-					<div class="controls">
-						<textarea name="inputCode" id="inputCode" cols="100" rows="20" class="input"></textarea>
-						<span class="help-block">Paste your JS in the area above</span>
-					</div>	
-  				<div class="control-group tab-pane active" id="fileInput">
-					<div id="file_input_wrapper" class="well">
-						<input class="input" type="file">
-					</div>
-					<span class="help-block">Or you can submit a file for processing; we'll take care of the rest :)</span>
-				</div>
-				</div>
+    <ul class="nav nav-tabs" style="cursor:pointer;">
+        <li id="textOption"
+            onclick="hideTab('fileInput');setClassName('fileInput', 'undefined');showTab('codeInput');setClassName('textOption', 'active');"
+            class="active"><a>Text</a></li>
+        <!--<li id="fileoption" onclick="hideTab('codeinput');setClassName('textoption', 'undefined');showTab('fileinput');setClassName('fileoption', 'active');"><a>File</a></li>-->
+        <li onclick="alert('Feature in development');"><a>What's new?</a></li>
+    </ul>
 
-				<!-- 
-						File input tab content is shown below; if you want to see this one,
-						change the class to "control-group tab-pane active"
-						(is set by default)
-				-->
-				<!--<div class="control-group tab-pane" id="fileinput">-->
-					<!--<label for="file_input_wrapper" class="control-label">File</label>-->
-					<!--<div id="file_input_wrapper" class="well">-->
-						<!--<input class="input" type="file">-->
-					<!--</div>-->
-					<!--<span class="help-block">Or you can submit a file for processing; we'll take care of the rest :)</span>-->
-				<!--</div>-->
-				<!--<br>-->
+    <!-- The collection of tabs and their respective contents can be found below -->
+    <div class="tab-content" style="text-align:center;">
 
-				<!-- Documentation output section is shown below -->
-                <!--
-				<label for="outputcode" class="control-label">Documentation File</label>
-				<div class="controls">
-					<textarea name="outputcode" placeholder="The documentation code will appear here once you click the 'Generate' button, shown below." class="span10" id="outputcode" cols="80" rows="10" class="input" readonly></textarea>
-					<span class="help-block">The documentation in HTML format appears in the area above</span>
-				</div>
+        <br>
+
+        <!--
+                Text input tab content is shown below; if you want to see this one,
+                change the class to "control-group tab-pane active"
+        -->
+        <div class="control-group tab-pane active" id="codeInput">
+            <label for="inputCode" class="control-label">Code</label>
+
+            <div class="controls">
+                <textarea name="inputCode" id="inputCode" cols="100" rows="20" class="input"></textarea>
+                <span class="help-block">Paste your JS in the area above</span>
+            </div>
+            <div class="control-group tab-pane active" id="fileInput">
+                <div id="file_input_wrapper" class="well">
+                    <input class="input" type="file">
+                </div>
+                <span class="help-block">Or you can submit a file for processing; we'll take care of the rest :)</span>
+            </div>
+        </div>
+
+        <!--
+                File input tab content is shown below; if you want to see this one,
+                change the class to "control-group tab-pane active"
+                (is set by default)
+        -->
+        <!--<div class="control-group tab-pane" id="fileinput">-->
+        <!--<label for="file_input_wrapper" class="control-label">File</label>-->
+        <!--<div id="file_input_wrapper" class="well">-->
+        <!--<input class="input" type="file">-->
+        <!--</div>-->
+        <!--<span class="help-block">Or you can submit a file for processing; we'll take care of the rest :)</span>-->
+        <!--</div>-->
+        <!--<br>-->
+
+        <!-- Documentation output section is shown below -->
+        <!--
+        <label for="outputcode" class="control-label">Documentation File</label>
+        <div class="controls">
+            <textarea name="outputcode" placeholder="The documentation code will appear here once you click the 'Generate' button, shown below." class="span10" id="outputcode" cols="80" rows="10" class="input" readonly></textarea>
+            <span class="help-block">The documentation in HTML format appears in the area above</span>
+        </div>
 -->
 
-				<br>
+        <br>
 
-				<!-- Documentation generation options are shown below -->
-				<div class="well">
-					<button onclick="showOutputDialog();" class="btn btn-primary btn-large" style="background-color:#0094FF;border-color:#007FDB;"><strong>Generate</strong></button>
-                  <button class="btn btn-primary btn-large" style="background-color:#FF0026;border-color:#E00021;"><strong>Clear Code Area</strong></button>
-				</div>
+        <!-- Documentation generation options are shown below -->
+        <div class="well">
+            <button onclick="showOutputDialog();" class="btn btn-primary btn-large"
+                    style="background-color:#0094FF;border-color:#007FDB;"><strong>Generate</strong></button>
+            <button class="btn btn-primary btn-large" style="background-color:#FF0026;border-color:#E00021;"><strong>Clear
+                Code Area</strong></button>
+        </div>
 
-			</div>
+    </div>
 
-				
-			<!-- The footer of the web pages goes here -->
-			<div class="page-header" style="text-align:center;">
-				<p>Created by <strong>CEDAURU</strong> | 2014</p>
-			</div>
 
-		</div>
-      
-	</body>	
+    <!-- The footer of the web pages goes here -->
+    <div class="page-header" style="text-align:center;">
+        <p>Created by <strong>CEDAURU</strong> | 2014</p>
+    </div>
+
+</div>
+
+</body>
 
 </html>
