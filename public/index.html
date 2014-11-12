@@ -5,7 +5,7 @@
       <title>Doc 4 JS</title>
 
       <link rel="icon" href="">
-      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
       
       <!-- Scripts -->
       <script type="text/javascript" src="Responses.js"></script>
@@ -16,13 +16,13 @@
 		<!-- This allows the CSS configuration to be size-aware -->
 		<div class="container">
           
-          <dialog id="outputcontent" style="top:20%;width:50%;height:90%;">
+          <dialog id="outputContent" style="top:20%;width:50%;height:90%;">
             Hola :)  
           </dialog>
 
-			<!-- The header of the webpage goes here -->
+			<!-- The header of the web page goes here -->
 			<div class="page-header">
-				<img src="assets/doc4js.png" alt="Doc-4-JS" style="margin-left:auto;margin-right:auto;display:block;">
+				<img src="img/doc4js.png" alt="Doc-4-JS" style="margin-left:auto;margin-right:auto;display:block;">
 			</div>
 
 			<!-- Introduction to the application -->
@@ -35,7 +35,7 @@
 			<div class="alert alert-warning">This is a beta version of the official web application. You can suggest edits by writing an email to the following address: <strong>lascariopacheco@hotmail.com</strong></div>
 
 			<ul class="nav nav-tabs" style="cursor:pointer;">
-				<li id="textoption" onclick="hideTab('fileinput');setClassName('fileoption', 'undefined');showTab('codeinput');setClassName('textoption', 'active');" class="active"><a>Text</a></li>
+				<li id="textOption" onclick="hideTab('fileInput');setClassName('fileInput', 'undefined');showTab('codeInput');setClassName('textOption', 'active');" class="active"><a>Text</a></li>
 				<!--<li id="fileoption" onclick="hideTab('codeinput');setClassName('textoption', 'undefined');showTab('fileinput');setClassName('fileoption', 'active');"><a>File</a></li>-->
 				<li onclick="alert('Feature in development');"><a>What's new?</a></li>
 			</ul>
@@ -49,13 +49,13 @@
 						Text input tab content is shown below; if you want to see this one,
 						change the class to "control-group tab-pane active"
 				-->
-				<div class="control-group tab-pane active" id="codeinput">
-					<label for="inputcode" class="control-label">Code</label>
+				<div class="control-group tab-pane active" id="codeInput">
+					<label for="inputCode" class="control-label">Code</label>
 					<div class="controls">
-						<textarea name="inputcode" class="span10" id="inputcode" cols="100" rows="20" class="input"></textarea>
+						<textarea name="inputCode" id="inputCode" cols="100" rows="20" class="input"></textarea>
 						<span class="help-block">Paste your JS in the area above</span>
 					</div>	
-  				<div class="control-group tab-pane active" id="fileinput">
+  				<div class="control-group tab-pane active" id="fileInput">
 					<div id="file_input_wrapper" class="well">
 						<input class="input" type="file">
 					</div>
@@ -68,14 +68,14 @@
 						change the class to "control-group tab-pane active"
 						(is set by default)
 				-->
-				<div class="control-group tab-pane" id="fileinput">
-					<label for="file_input_wrapper" class="control-label">File</label>
-					<div id="file_input_wrapper" class="well">
-						<input class="input" type="file">
-					</div>
-					<span class="help-block">Or you can submit a file for processing; we'll take care of the rest :)</span>
-				</div>
-				<br>
+				<!--<div class="control-group tab-pane" id="fileinput">-->
+					<!--<label for="file_input_wrapper" class="control-label">File</label>-->
+					<!--<div id="file_input_wrapper" class="well">-->
+						<!--<input class="input" type="file">-->
+					<!--</div>-->
+					<!--<span class="help-block">Or you can submit a file for processing; we'll take care of the rest :)</span>-->
+				<!--</div>-->
+				<!--<br>-->
 
 				<!-- Documentation output section is shown below -->
                 <!--
@@ -97,7 +97,7 @@
 			</div>
 
 				
-			<!-- The footer of the webpages goes here -->			
+			<!-- The footer of the web pages goes here -->
 			<div class="page-header" style="text-align:center;">
 				<p>Created by <strong>CEDAURU</strong> | 2014</p>
 			</div>
