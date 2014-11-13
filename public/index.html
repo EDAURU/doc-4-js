@@ -5,8 +5,10 @@
     <title>Doc 4 JS</title>
 
     <link rel="icon" href="">
-    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="bower-libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/highlight.js/styles/railscasts.css"/>
+    <script src="lib/highlight.js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     <!-- Scripts -->
     <script type="text/javascript" src="Responses.js"></script>
 </head>
@@ -57,6 +59,15 @@
 
             <div class="controls">
                 <textarea name="inputCode" id="inputCode" cols="100" rows="20" class="input"></textarea>
+
+                <pre>
+                    <code class="javascript">
+                        function todo(){
+                        console.log("I need to be worked by LASCARIO");
+                        }
+                    </code>
+                </pre>
+                <a href="https://highlightjs.org/">LASCARIO CLICK ME!</a>
                 <span class="help-block">Paste your JS in the area above</span>
             </div>
             <div class="control-group tab-pane active" id="fileInput">
