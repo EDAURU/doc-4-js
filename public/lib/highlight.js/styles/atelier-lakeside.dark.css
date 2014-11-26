@@ -78,9 +78,9 @@
 .hljs {
   display: block;
   overflow-x: auto;
-  background: #1f292e;
+  background: #F5F5F5;
   color: #7ea2b4;
-  padding: 0.5em;
+  padding: 0em;
   -webkit-text-size-adjust: none;
 }
 
