@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="bower-libs/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="lib/highlight.js/styles/atelier-lakeside.dark.css"/>
     <script src="lib/highlight.js/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
     <!-- Scripts -->
+	<script>hljs.initHighlightingOnLoad();</script>
     <script type="text/javascript" src="Responses.js"></script>
 </head>
 
@@ -59,41 +59,8 @@
 
 				<!--<div class="controls">
 					<textarea name="inputCode" id="inputCode" cols="100" rows="20" class="input">-->
-						<pre style="text-align:left;">
-							<code class="javascript">
-	/**
-	 * Allows changing object classes, requires the ID of the object
-	 * @param {String} id     The ID of the object whose class will be modified
-	 * @param {String} nclass The name of the new class for the object
-	 */
-	function setClassName(id, nclass) {
-	  "use strict";
-	  var e = document.getElementById(id);
-	  e.className = nclass;
-	}
-
-	/**
-	 * Shows a tab, given its ID
-	 * @param {String} tab The ID of the tab element
-	 */
-	function showTab(tab) {
-	  "use strict";
-	  setClassName(tab, 'control-group tab-pane active');
-	}
-
-	/**
-	 * Hides a tab, given its ID
-	 * @param {String} tab The ID of the tab element
-	 */
-	function hideTab(tab) {
-	  "use strict";
-	  setClassName(tab, 'control-group tab-pane');
-	}
-
-	function showOutputDialog() {
-	  "use strict";
-	  document.getElementById('outputcontent').showModal();
-	}
+						<pre style="text-align:left;" class="javascript">
+							<code id="rawCode">
 							</code>
 						</pre>
 					<!--</textarea>-->
@@ -101,7 +68,7 @@
 				<!--</div>-->
 				<div class="control-group tab-pane active" id="fileInput">
 					<div id="file_input_wrapper" class="well">
-						<input class="input" type="file">
+						<input class="input" type="file" onchange="readFile(event);">
 					</div>
 					<span class="help-block">Or you can submit a file for processing; we'll take care of the rest :)</span>
 				</div>
