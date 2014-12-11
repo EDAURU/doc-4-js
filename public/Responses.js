@@ -32,6 +32,10 @@ function showOutputDialog() {
 	document.getElementById('outputcontent').showModal();
 }
 
+
+/*
+	File read and write methods
+*/
 function showFileText(ev) {
 	"use strict";
 	var r, fTextArea;
