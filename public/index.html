@@ -25,6 +25,7 @@
 				<img src="assets/doc4js.png" alt="Doc-4-JS" style="margin-left:auto;margin-right:auto;display:block;">
 			</div>
 
+<<<<<<< Updated upstream
 			<!-- Introduction to the application -->
 
 				<!--
@@ -56,12 +57,93 @@
 						<span class="help-block">Paste your JS in the area above</span>
 					</div>	
   				<div class="control-group tab-pane active" id="fileinput">
+=======
+		<!-- Introduction to the application -->
+
+		<!--
+	<p>This is a web interface to help you generate a documentation API. This application was developed by CEDAURU for public use.</p>
+		-->
+
+		<!-- "This is just a test" alert -->
+		<div class="alert alert-warning">This is a beta version of the official web application. You can suggest edits by
+			writing an email to the following address: <strong>lascariopacheco@hotmail.com</strong></div>
+
+		<ul class="nav nav-tabs" style="cursor:pointer;">
+			<li id="textOption"
+				onclick="hideTab('fileInput');showTab('codeInput');setClassName('textOption', 'active');setClassName('fileOption', 'undefined');"
+				class="active"><a>Copy and Paste</a></li>
+			<li id="fileOption" onclick="hideTab('codeInput');showTab('fileInput');setClassName('fileOption', 'active');setClassName('textOption', 'undefined')"><a>Upload a Text File</a></li>
+			<li onclick="alert('Feature in development');"><a>What's New?</a></li>
+		</ul>
+
+		<!-- The collection of tabs and their respective contents can be found below -->
+		<div class="tab-content" style="text-align:center;">
+
+			<br>
+
+			<!--
+					Text input tab content is shown below; if you want to see this one,
+					change the class to "control-group tab-pane active"
+			-->
+			<div class="control-group tab-pane active" id="codeInput">
+				<label for="inputCode" class="control-label">Code</label>
+
+				<!--<div class="controls">
+					<textarea name="inputCode" id="inputCode" cols="100" rows="20" class="input">-->
+						<pre style="text-align:left;">
+							<code class="javascript">
+	/**
+	 * Allows changing object classes, requires the ID of the object
+	 * @param {String} id     The ID of the object whose class will be modified
+	 * @param {String} nclass The name of the new class for the object
+	 */
+	function setClassName(id, nclass) {
+	  "use strict";
+	  var e = document.getElementById(id);
+	  e.className = nclass;
+	}
+
+	/**
+	 * Shows a tab, given its ID
+	 * @param {String} tab The ID of the tab element
+	 */
+	function showTab(tab) {
+	  "use strict";
+	  setClassName(tab, 'control-group tab-pane active');
+	}
+
+	/**
+	 * Hides a tab, given its ID
+	 * @param {String} tab The ID of the tab element
+	 */
+	function hideTab(tab) {
+	  "use strict";
+	  setClassName(tab, 'control-group tab-pane');
+	}
+
+	function showOutputDialog() {
+	  "use strict";
+	  document.getElementById('outputcontent').showModal();
+	}
+							</code>
+						</pre>
+					<!--</textarea>-->
+					<span class="help-block">Paste your JS in the area above</span>
+				</div>
+				<!--</div>-->
+				<div class="control-group tab-pane" id="fileInput">
+>>>>>>> Stashed changes
 					<div id="file_input_wrapper" class="well">
 						<input class="input" type="file">
 					</div>
 					<span class="help-block">Or you can submit a file for processing; we'll take care of the rest :)</span>
 				</div>
+<<<<<<< Updated upstream
 				</div>
+=======
+
+			<br>
+>>>>>>> Stashed changes
 
 				<!-- 
 						File input tab content is shown below; if you want to see this one,
