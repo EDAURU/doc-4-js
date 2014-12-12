@@ -4,9 +4,9 @@
  * @param {String} nclass The name of the new class for the object
  */
 function setClassName(id, nclass) {
-  "use strict";
-  var e = document.getElementById(id);
-  e.className = nclass;
+	"use strict";
+	var e = document.getElementById(id);
+	e.className = nclass;
 }
 
 /**
@@ -14,8 +14,8 @@ function setClassName(id, nclass) {
  * @param {String} tab The ID of the tab element
  */
 function showTab(tab) {
-  "use strict";
-  setClassName(tab, 'control-group tab-pane active');
+	"use strict";
+	setClassName(tab, 'control-group tab-pane active');
 }
 
 /**
@@ -23,11 +23,49 @@ function showTab(tab) {
  * @param {String} tab The ID of the tab element
  */
 function hideTab(tab) {
-  "use strict";
-  setClassName(tab, 'control-group tab-pane');
+	"use strict";
+	setClassName(tab, 'control-group tab-pane');
 }
 
 function showOutputDialog() {
-  "use strict";
-  document.getElementById('outputcontent').showModal();
+	"use strict";
+	document.getElementById('outputcontent').showModal();
+}
+
+
+/*
+	File read and write methods
+*/
+function showFileText(ev) {
+	"use strict";
+	var r, fTextArea;
+	
+	/*
+		Text area updating while writing...
+	*/
+	fTextArea = document.getElementById('rawCode');
+	fTextArea.innerHTML = "Writing contents of file...";
+	
+	/*
+		Text area file writing
+	*/
+	r = ev.target.result;
+	fTextArea.innerHTML = r;
+	hljs.highlightBlock(fTextArea);
+}
+
+function readFile(ev) {
+	"use strict";
+	var f, fReader, tArea;
+	
+	/*
+		Paragraph handling variables
+	*/
+	tArea = document.getElementById('rawCode');
+	
+	f = (ev.target.files)[0];
+	fReader = new FileReader();
+	fReader.onload = showFileText;
+	
+	fReader.readAsText(f);
 }
