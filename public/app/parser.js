@@ -1,3 +1,9 @@
+//const
+//	HEAD = ["annotation1", "annotation2"],
+//	BODY = ["params","x2","x3"],
+//	FOOTER = ["pepito", "doritos", "ruffles"];
+
+
 var Parser = function() {
     var structure = {
     	head: {},
@@ -57,3 +63,8 @@ var Parser = function() {
     };
 };
 
+//testing with node.
+//var lol = new Parser();
+//console.log(typeof  lol.parse(""));
+//console.log(lol.parse());
+//console.log(lol.parse("adljasdlkj\ndasjnd\n/**\n*@head \n*@vivafidel asdjkasdlkjas\n*@headuno ansdkjnasdjn\n*/\nasdlkjasldj\n askdjaskjd\n/**\n*@body \n*@bodyuno sdajhdkajsh *\n@bodydos asdkjahdsj\n**/\nasdkjhadkj asdjkj akjsdn\n/**\n*@body  \n*@bodyuno asdkljasdlkj \n*@bodydos adsasdjkandjkn \n**/\nadjlakdj asldkj \n/**\n*@footer\n*@footeruno adsjlkasj laskdj\n*/\ndajldkjaslk \n"));
