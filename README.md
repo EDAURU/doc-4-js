@@ -25,22 +25,22 @@ They allow the application to recognize *metadata* from any code segment submitt
 **Example of a Head Documentation**
 
 ```javascript
-    /**
-	 * @desc A function that allows adding a couple of numbers
-	 * @param {Integer | Double} a It is the first term.
-	 * @param {Integer | Double} b It is the second term.
-	 * @returns {Integer | Double} It is the result of the sum of both terms.
-	 */
-	 
-	function add(a, b) { /*Instructions*/}
+/**
+ * @desc A function that allows adding a couple of numbers
+ * @param {Integer | Double} a It is the first term.
+ * @param {Integer | Double} b It is the second term.
+ * @returns {Integer | Double} It is the result of the sum of both terms.
+ */
+
+function add(a, b) { /*Instructions*/}
 ```
 
 ----
 
-> **BODY ANNOTATIONS [METHODS]**
+> **BODY ANNOTATIONS (METHODS)**
 > 
 > **@body**
-	> Marks the beggining of another part of the body section of the library.
+	> Marks the beginning of another part of the body section of the library.
 	
 > **@desc {description}**
 	> Makes reference to a description of the method.
