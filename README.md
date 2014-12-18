@@ -22,8 +22,8 @@ They allow the application to recognize *metadata* from any code segment submitt
 > **@name {name}**
 	> Makes reference to the name of the library.
 
-**Example of a Head Documentation**
 
+**Example of a Head Documentation**
 ```javascript
 /**
  * @desc A function that allows adding a couple of numbers
@@ -35,7 +35,6 @@ They allow the application to recognize *metadata* from any code segment submitt
 ```
 
 ----
-
 > **BODY ANNOTATIONS (METHODS)**
 > 
 > **@body**
@@ -50,8 +49,8 @@ They allow the application to recognize *metadata* from any code segment submitt
 > **@returns {type} {description}**
 	> Makes reference to the return value of the function.
 
-**Example of a method documentation**
 
+**Example of a method documentation**
 ```javascript
 /**
  * @desc A function that allows adding a couple of numbers
@@ -61,8 +60,8 @@ They allow the application to recognize *metadata* from any code segment submitt
  */
  function add(a, b) { /*Instructions*/}
 ```
-----
 
+----
 > **BODY ANNOTATIONS (VARIABLES)**
 > 
 > **@body**
@@ -79,8 +78,8 @@ They allow the application to recognize *metadata* from any code segment submitt
  */
  var s = “I am a string.”;
 ```
-----
 
+----
 > **OBSERVATION ANNOTATIONS**
 > 
 > **@foot**
@@ -95,8 +94,8 @@ They allow the application to recognize *metadata* from any code segment submitt
 > **@depend {name} {version}**
 	> Makes reference to a dependence of a library.
 
-**Example of an observations documentation**
 
+**Example of an observations documentation**
 ```javascript
 /**
  * @changelog {1.0}
@@ -106,8 +105,8 @@ They allow the application to recognize *metadata* from any code segment submitt
  * @depend Bootstrap 3.3.0
  */
  ```
+ 
 ----
-
 Comments and suggestions
 ------------------------
 
