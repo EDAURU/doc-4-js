@@ -1,12 +1,12 @@
 
-## Introduction ##
+# Introduction #
 Is a web application that allows API documentation file generation, based on any JavaScript file that contains **Doc 4 JS annotations**. It is designed to ease the burden of documenting libraries, making it easier to disclose them. Still, it can be used by any programming lover or investigator as a didactic way of learning about web applications.
 
 ## Doc 4 JS Annotations ##
 They allow the application to recognize *metadata* from any code segment submitted for processing. Doc 4 JS has a solid set of annotations that fulfill generic documentation needs for any JavaScript library. These annotations can be related to the section of the library they pretend to document. A JavaScript library can be divided in four sections: *head*, *methods*, *variables* and *observations*.
 
-> **HEADER ANNOTATIONS**
-> 
+### Header Annotations ###
+
 > **@head**
 	> Marks the beginning of the head section of the library,
 > 
@@ -34,9 +34,9 @@ They allow the application to recognize *metadata* from any code segment submitt
  function add(a, b) { /*Instructions*/}
 ```
 
-----
-> **BODY ANNOTATIONS (METHODS)**
-> 
+
+### Body Annotations (Methods)###
+
 > **@body**
 	> Marks the beginning of another part of the body section of the library.
 	
@@ -61,17 +61,16 @@ They allow the application to recognize *metadata* from any code segment submitt
  function add(a, b) { /*Instructions*/}
 ```
 
-----
-> **BODY ANNOTATIONS (VARIABLES)**
-> 
+### Body Annotations (Variables)###
+
 > **@body**
 	> Marks the beginning of another part of the body section of the library.
 	
 > **@var {type} {name} {description}**
 	> Makes reference to the private variable that will be documented.
 
-**Example of a variable documentation**
 
+**Example of a variable documentation**
 ```javascript
 /**
  * @var {String} s It is a string that serves no purpose
@@ -80,8 +79,9 @@ They allow the application to recognize *metadata* from any code segment submitt
 ```
 
 ----
-> **OBSERVATION ANNOTATIONS**
-> 
+
+### Observation Annotations###
+
 > **@foot**
 	> Marks the beginning of an observation documentation.
 	
@@ -105,7 +105,7 @@ They allow the application to recognize *metadata* from any code segment submitt
  * @depend Bootstrap 3.3.0
  */
  ```
- 
+
 ----
 Comments and suggestions
 ------------------------
