@@ -24,7 +24,7 @@ They allow the application to recognize *metadata* from any code segment submitt
 
 **Example of a Head Documentation**
 
-
+```javascript
     /**
 	 * @desc A function that allows adding a couple of numbers
 	 * @param {Integer | Double} a It is the first term.
@@ -33,7 +33,7 @@ They allow the application to recognize *metadata* from any code segment submitt
 	 */
 	 
 	function add(a, b) { /*Instructions*/}
-
+```
 
 ----
 
