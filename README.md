@@ -34,7 +34,6 @@ They allow the application to recognize *metadata* from any code segment submitt
  function add(a, b) { /*Instructions*/}
 ```
 
-
 ### Body Annotations (Methods)###
 
 > **@body**
@@ -77,8 +76,6 @@ They allow the application to recognize *metadata* from any code segment submitt
  */
  var s = “I am a string.”;
 ```
-
-----
 
 ### Observation Annotations###
 
