@@ -34,14 +34,13 @@
 		-->
 
 		<!-- "This is just a test" alert -->
-		<div class="alert alert-warning">This is a beta version of the official web application. You can suggest edits by
-			writing an email to the following address: <strong>lascariopacheco@hotmail.com</strong></div>
+		<div class="alert alert-warning">You can copy and paste your JavaScript code or upload a JavaScript text file.</div>
 
 		<ul class="nav nav-tabs" style="cursor:pointer;">
 			<li id="textOption"
-				onclick="hideTab('fileInput');setClassName('fileInput', 'undefined');showTab('codeInput');setClassName('textOption', 'active');"
+				onclick="hideTab('fileInput');showTab('codeInput');setClassName('fileOption', 'undefined');setClassName('textOption', 'active');"
 				class="active"><a>Text</a></li>
-			<!--<li id="fileoption" onclick="hideTab('codeinput');setClassName('textoption', 'undefined');showTab('fileinput');setClassName('fileoption', 'active');"><a>File</a></li>-->
+			<li id="fileOption" onclick="hideTab('codeInput');showTab('fileInput');setClassName('textOption', 'undefined');setClassName('fileOption', 'active');"><a>File</a></li>
 			<li onclick="alert('Feature in development');"><a>What's new?</a></li>
 		</ul>
 
@@ -55,32 +54,30 @@
 					change the class to "control-group tab-pane active"
 			-->
 			<div class="control-group tab-pane active" id="codeInput">
-				<label for="inputCode" class="control-label">Code</label>
+				<h6><b>Code</b></h6>
 
 				<!--<div class="controls">
 					<textarea name="inputCode" id="inputCode" cols="100" rows="20" class="input">-->
-						<pre style="text-align:left;" class="javascript">
-							<code id="rawCode">
-							</code>
-						</pre>
+							<textarea name="rawCode" id="rawCode" rows="10" cols="100" onchange="setClassName('generateButton', 'btn btn.primary btn-large');"></textarea>
 					<!--</textarea>-->
 					<span class="help-block">Paste your JS in the area above</span>
 				<!--</div>-->
-				<div class="control-group tab-pane active" id="fileInput">
-					<div id="file_input_wrapper" class="well">
-						<input class="input" type="file" onchange="readFile(event);">
-					</div>
-					<span class="help-block">Or you can submit a file for processing; we'll take care of the rest :)</span>
+			</div>
+			
+			<div class="control-group tab-pane" id="fileInput">
+				<div id="file_input_wrapper" class="well">
+					<input class="input" type="file" onchange="readFile(event);">
 				</div>
+				<span class="help-block">Submit a file for processing; we'll take care of the rest :)</span>
 			</div>
 
 			<br>
 
 			<!-- Documentation generation options are shown below -->
 			<div class="well">
-				<button onclick="showOutputDialog();" class="btn btn-primary btn-large"
+				<button id="generateButton" onclick="showOutputDialog();" class="btn btn-primary btn-large"
 						style="background-color:#0094FF;border-color:#007FDB;"><strong>Generate</strong></button>
-				<button class="btn btn-primary btn-large" style="background-color:#FF0026;border-color:#E00021;"><strong>Clear
+				<button id="clearButton" class="btn btn-primary btn-large" style="background-color:#FF0026;border-color:#E00021;"><strong>Clear
 					Code Area</strong></button>
 			</div>
 
