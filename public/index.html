@@ -7,6 +7,7 @@
     <link rel="icon" href="">
     <link rel="stylesheet" href="bower-libs/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="lib/highlight.js/styles/atelier-lakeside.dark.css"/>
+	<link rel="stylesheet" href="customstyle.css"/>
     <script src="lib/highlight.js/highlight.pack.js"></script>
     <!-- Scripts -->
 	<script>hljs.initHighlightingOnLoad();</script>
@@ -18,13 +19,13 @@
 	<!-- This allows the CSS configuration to be size-aware -->
 	<div class="container">
 
-		<dialog id="outputContent" style="top:20%;width:50%;height:90%;">
+		<dialog id="outputContent">
 			Hola :)
 		</dialog>
 
 		<!-- The header of the web page goes here -->
 		<div class="page-header">
-			<img src="img/doc4js.png" alt="Doc-4-JS" style="margin-left:auto;margin-right:auto;display:block;">
+			<img id="banner" src="img/doc4js.png" alt="Doc-4-JS">
 		</div>
 
 		<!-- Introduction to the application -->
@@ -36,7 +37,7 @@
 		<!-- "This is just a test" alert -->
 		<div class="alert alert-warning">You can copy and paste your JavaScript code or upload a JavaScript text file.</div>
 
-		<ul class="nav nav-tabs" style="cursor:pointer;">
+		<ul id="navigator" class="nav nav-tabs">
 			<li id="textOption"
 				onclick="hideTab('fileInput');showTab('codeInput');setClassName('fileOption', 'undefined');setClassName('textOption', 'active');"
 				class="active"><a>Text</a></li>
@@ -56,11 +57,14 @@
 			<div class="control-group tab-pane active" id="codeInput">
 				<h6><b>Code</b></h6>
 
-				<!--<div class="controls">
-					<textarea name="inputCode" id="inputCode" cols="100" rows="20" class="input">-->
-							<textarea name="rawCode" id="rawCode" rows="10" cols="100" onchange="setClassName('generateButton', 'btn btn.primary btn-large');"></textarea>
-					<!--</textarea>-->
-					<span class="help-block">Paste your JS in the area above</span>
+				<!--<div class="controls"-->
+				<div id="formattedCodeWrapper" class="scrollable hidden">
+					<pre id="formattedCode" class="javascript hljs">
+					</pre>
+				</div>
+				<textarea oninput="updateFormattedCode();" name="rawCode" id="rawCode" rows="10" cols="100" onchange="setClassName('generateButton', 'btn btn.primary btn-large');"></textarea>
+
+				<span class="help-block">Paste your JS in the area above</span>
 				<!--</div>-->
 			</div>
 			
@@ -75,10 +79,8 @@
 
 			<!-- Documentation generation options are shown below -->
 			<div class="well">
-				<button id="generateButton" onclick="showOutputDialog();" class="btn btn-primary btn-large"
-						style="background-color:#0094FF;border-color:#007FDB;"><strong>Generate</strong></button>
-				<button id="clearButton" class="btn btn-primary btn-large" style="background-color:#FF0026;border-color:#E00021;"><strong>Clear
-					Code Area</strong></button>
+				<button id="generateButton" onclick="showOutputDialog();" class="btn btn-primary btn-large"><strong>Generate</strong></button>
+				<button id="clearButton" class="btn btn-primary btn-large"><strong>Clear Code Area</strong></button>
 			</div>
 
 		</div>

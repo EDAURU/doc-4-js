@@ -1,0 +1,57 @@
+
+/**
+	CSS by Class
+*/
+.scrollable {
+	display: block;
+	height: 30%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 75%;
+}
+
+.hidden {
+	display: none;
+}
+
+/**
+	CSS by ID
+*/
+#banner {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#clearButton {
+	background-color: #FF0026;
+	border-color: #E00021;
+	color: white;
+}
+
+
+#formattedCode {
+	display: block;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 3%;
+	text-align: left;
+}
+
+
+#generateButton {
+	background-color: #0094FF;
+	border-color: #007FDB;
+	color: white;
+}
+
+#navigator {
+	cursor: pointer;
+}
+
+#outputContent {
+	height: 90%;
+	width: 50%;
+	top: 20%;
+}

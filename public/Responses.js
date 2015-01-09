@@ -69,3 +69,29 @@ function readFile(ev) {
 	
 	fReader.readAsText(f);
 }
+
+function updateFormattedCode() {
+	"use strict";
+	var rawCode = document.getElementById('rawCode');
+	var formattedCode = document.getElementById('formattedCode');
+	
+	formattedCode.innerHTML = rawCode.value;
+}
+
+
+window.onkeydown = function (event) {
+	switch (event.keyCode) {
+		case 17:
+			var rawCode = document.getElementById('rawCode');
+			if (rawCode.className === 'hidden') {
+				setClassName('formattedCodeWrapper', 'hidden');
+				setClassName('rawCode', 'undefined');
+			} else {
+				setClassName('rawCode', 'hidden');
+				setClassName('formattedCodeWrapper', 'scrollable');
+			}
+		break;
+		default:
+		break;
+	}
+};
