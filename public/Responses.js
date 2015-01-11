@@ -74,7 +74,6 @@ function updateFormattedCode() {
 	"use strict";
 	var rawCode = document.getElementById('rawCode');
 	var formattedCode = document.getElementById('formattedCode');
-	
 	formattedCode.innerHTML = rawCode.value;
 }
 
@@ -83,12 +82,19 @@ window.onkeydown = function (event) {
 	switch (event.keyCode) {
 		case 17:
 			var rawCode = document.getElementById('rawCode');
+			var formattedCode = document.getElementById('formattedCode');
+			var scrollValue;
 			if (rawCode.className === 'hidden') {
+				scrollValue = formattedCode.scrollTop;
 				setClassName('formattedCodeWrapper', 'hidden');
 				setClassName('rawCode', 'undefined');
+				rawCode.scrollTop = scrollValue;
 			} else {
+				scrollValue = rawCode.scrollTop;
 				setClassName('rawCode', 'hidden');
 				setClassName('formattedCodeWrapper', 'scrollable');
+				formattedCode.scrollTop = scrollValue;
+				updateFormattedCode();
 			}
 		break;
 		default:
