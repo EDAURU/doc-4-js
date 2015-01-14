@@ -1,3 +1,6 @@
+var commandKeyCodeSum = 0;
+var lastKeyPressed    = 0;
+
 /**
  * Allows changing object classes, requires the ID of the object
  * @param {String} id     The ID of the object whose class will be modified
@@ -32,6 +35,12 @@ function showOutputDialog() {
 	document.getElementById('outputcontent').showModal();
 }
 
+function highlightFormattedCode() {
+	"use strict";
+	var formattedCode = document.getElementById('formattedCode');
+	hljs.highlightBlock(formattedCode);
+}
+
 
 /*
 	File read and write methods
@@ -51,7 +60,7 @@ function showFileText(ev) {
 	*/
 	r = ev.target.result;
 	fTextArea.innerHTML = r;
-	hljs.highlightBlock(fTextArea);
+	highlightFormattedCode();
 }
 
 function readFile(ev) {
@@ -72,32 +81,47 @@ function readFile(ev) {
 
 function updateFormattedCode() {
 	"use strict";
-	var rawCode = document.getElementById('rawCode');
-	var formattedCode = document.getElementById('formattedCode');
+	var rawCode, formattedCode;
+	rawCode = document.getElementById('rawCode');
+	formattedCode = document.getElementById('formattedCode');
 	formattedCode.innerHTML = rawCode.value;
 }
 
 
 window.onkeydown = function (event) {
-	switch (event.keyCode) {
-		case 17:
-			var rawCode = document.getElementById('rawCode');
-			var formattedCode = document.getElementById('formattedCode');
-			var scrollValue;
-			if (rawCode.className === 'hidden') {
-				scrollValue = formattedCode.scrollTop;
-				setClassName('formattedCodeWrapper', 'hidden');
-				setClassName('rawCode', 'undefined');
-				rawCode.scrollTop = scrollValue;
-			} else {
-				scrollValue = rawCode.scrollTop;
-				setClassName('rawCode', 'hidden');
-				setClassName('formattedCodeWrapper', 'scrollable');
-				formattedCode.scrollTop = scrollValue;
-				updateFormattedCode();
-			}
-		break;
-		default:
-		break;
+	"use strict";
+	
+	if (lastKeyPressed !== event.keyCode) {
+		console.log('Key Pressed: ' + event.keyCode);
+		commandKeyCodeSum += event.keyCode;
 	}
+	
+	
+	if (commandKeyCodeSum === 243) {
+		var rawCode, formattedCode, scrollValue;
+		rawCode = document.getElementById('rawCode');
+		formattedCode = document.getElementById('formattedCode');
+			
+		if (rawCode.className === 'hidden') {
+			scrollValue = formattedCode.scrollTop;
+			setClassName('formattedCodeWrapper', 'hidden');
+			setClassName('rawCode', 'undefined');
+			rawCode.scrollTop = scrollValue;
+		} else {
+			scrollValue = rawCode.scrollTop;
+			setClassName('rawCode', 'hidden');
+			setClassName('formattedCodeWrapper', 'scrollable');
+			formattedCode.scrollTop = scrollValue;
+			updateFormattedCode();
+			highlightFormattedCode();
+		}
+	}
+	lastKeyPressed = event.keyCode;
+};
+
+window.onkeyup = function (event) {
+	"use strict";
+	console.log('Key Lifted: ' + event.keyCode);
+	lastKeyPressed = undefined;
+	commandKeyCodeSum -= event.keyCode;
 };
