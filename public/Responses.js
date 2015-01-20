@@ -53,14 +53,19 @@ function showFileText(ev) {
 		Text area updating while writing...
 	*/
 	fTextArea = document.getElementById('rawCode');
-	fTextArea.innerHTML = "Writing contents of file...";
+	fTextArea.value = "Writing contents of file...";
 	
 	/*
 		Text area file writing
 	*/
 	r = ev.target.result;
-	fTextArea.innerHTML = r;
+	fTextArea.value = r;
 	highlightFormattedCode();
+	
+	hideTab('fileInput');
+	showTab('codeInput');
+	setClassName('fileOption', 'undefined');
+	setClassName('textOption', 'active');
 }
 
 function readFile(ev) {
