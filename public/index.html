@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="bower-libs/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="lib/highlight.js/styles/atelier-lakeside.dark.css"/>
 	<link rel="stylesheet" href="customstyle.css"/>
-    <script src="lib/highlight.js/highlight.pack.js"></script>
     <!-- Scripts -->
+    <script src="lib/highlight.js/highlight.pack.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
     <script type="text/javascript" src="Responses.js"></script>
 </head>
@@ -38,11 +38,9 @@
 		<div class="alert alert-warning">You can copy and paste your JavaScript code or upload a JavaScript text file.</div>
 
 		<ul id="navigator" class="nav nav-tabs">
-			<li id="textOption"
-				onclick="hideTab('fileInput');showTab('codeInput');setClassName('fileOption', 'undefined');setClassName('textOption', 'active');"
-				class="active"><a>Text</a></li>
-			<li id="fileOption" onclick="hideTab('codeInput');showTab('fileInput');setClassName('textOption', 'undefined');setClassName('fileOption', 'active');"><a>File</a></li>
-			<li onclick="alert('Feature in development');"><a>What's new?</a></li>
+			<li id="textOption" class="active"><a>Text</a></li>
+			<li id="fileOption"><a>File</a></li>
+			<li id="changeLogOption"><a>What's new?</a></li>
 		</ul>
 
 		<!-- The collection of tabs and their respective contents can be found below -->
@@ -57,28 +55,27 @@
 			<div class="control-group tab-pane active" id="codeInput">
 				<h6><b>Code</b></h6>
 
-				<!--<div class="controls"-->
 				<div id="formattedCodeWrapper" class="scrollable hidden">
 					<pre id="formattedCode" class="javascript hljs">
 					</pre>
 				</div>
-				<textarea name="rawCode" id="rawCode" rows="10" cols="100" onchange="setClassName('generateButton', 'btn btn.primary btn-large');"></textarea>
+				<textarea name="rawCode" id="rawCode" rows="10" cols="100"></textarea>
 
 				<span class="help-block">Paste your JS in the area above</span>
-				<!--</div>-->
+
 				<!-- Documentation generation options are shown below -->
 				<div class="container">
 					<div class="well">
-						<button id="generateButton" onclick="showOutputDialog();" class="btn btn-primary btn-large"><strong>Generate</strong></button>
-						<button id="clearButton" class="btn btn-primary btn-large" onclick="clearCodeArea();"><strong>Clear Code Area</strong></button>
-						<button id="toggleButton" onclick="toggleView();" class="btn btn-primary btn-large"><strong>Toggle View</strong></button>
+						<button id="generateButton" class="btn btn-primary btn-large"><strong>Generate</strong></button>
+						<button id="clearButton" class="btn btn-primary btn-large"><strong>Clear Code Area</strong></button>
+						<button id="toggleButton" class="btn btn-primary btn-large"><strong>Toggle View</strong></button>
 					</div>
 				</div>
 			</div>
 			
 			<div class="control-group tab-pane" id="fileInput">
 				<div id="file_input_wrapper" class="well">
-					<input class="input" type="file" onchange="readFile(event);">
+					<input id="fileInput" class="input" type="file">
 				</div>
 				<span class="help-block">Submit a file for processing; we'll take care of the rest :)</span>
 			</div>
@@ -97,10 +94,10 @@
 	<!-- Documentation Forms -->
     <div class="documentation-menu hidden">
         <h3>Documentación</h3>
-        <button class="documentation-button" onclick="showHeaderDocForm();">Documentar Cabecera</button>
-        <button class="documentation-button" onclick="showMethodDocForm();">Documentar Método</button>
-        <button class="documentation-button" onclick="showVariableDocForm();">Documentar Variable</button>
-        <button class="documentation-button" onclick="showFootDocForm();">Documentar Pie de Página</button>
+        <button id="headerButton" class="documentation-button">Documentar Cabecera</button>
+        <button id="methodButton" class="documentation-button">Documentar Método</button>
+        <button id="varButton" class="documentation-button">Documentar Variable</button>
+        <button id="footButton" class="documentation-button">Documentar Pie de Página</button>
     </div>
     
     <div class="documentation-form hidden" id="headerDocForm">
@@ -142,7 +139,7 @@
         <br>
         <div class="select-wrapper">
         <label for="methodVarSelectInput">Parámetro</label>
-            <select id="methodVarSelectInput" onchange="loadVariableData();">
+            <select id="methodVarSelectInput">
                 <option>Nuevo Parámetro</option>
                 <option>parametro_a</option>
                 <option>parametro_b</option>
@@ -223,8 +220,9 @@
         <br>
         <button>Aplicar Cambios</button>
     </div>
-
-
+	
+	<!-- Event binding script -->
+	<script type="text/javascript" src="EventBinding.js"></script>
 </body>
 
 </html>
