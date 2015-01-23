@@ -92,7 +92,54 @@ function updateFormattedCode() {
 	formattedCode.innerHTML = rawCode.value;
 }
 
+/*
+	Documentation Forms Methods
+*/
+function showForm(formID) {
+    "use strict";
+    setClassName(formID, 'documentation-form');
+}
 
+function hideForm(formID) {
+    "use strict";
+    setClassName(formID, 'hidden');
+}
+
+function showHeaderDocForm() {
+    "use strict";
+    showForm('headerDocForm');
+    hideForm('methodDocForm');
+    hideForm('variableDocForm');
+    hideForm('footDocForm');
+}
+
+function showMethodDocForm() {
+    "use strict";
+    showForm('methodDocForm');
+    hideForm('headerDocForm');
+    hideForm('variableDocForm');
+    hideForm('footDocForm');
+}
+
+function showVariableDocForm() {
+    "use strict";
+    showForm('variableDocForm');
+    hideForm('methodDocForm');
+    hideForm('headerDocForm');
+    hideForm('footDocForm');
+}
+
+function showFootDocForm() {
+    "use strict";
+    showForm('footDocForm');
+    hideForm('methodDocForm');
+    hideForm('headerDocForm');
+    hideForm('variableDocForm');
+}
+
+/*
+	Event Methods
+*/
 window.onkeydown = function (event) {
 	"use strict";
 	

@@ -92,6 +92,137 @@
 		</div>
 
 	</div>
+	
+	<!-- Documentation Forms -->
+    <div class="documentation-menu hidden">
+        <h3>Documentación</h3>
+        <button class="documentation-button" onclick="showHeaderDocForm();">Documentar Cabecera</button>
+        <button class="documentation-button" onclick="showMethodDocForm();">Documentar Método</button>
+        <button class="documentation-button" onclick="showVariableDocForm();">Documentar Variable</button>
+        <button class="documentation-button" onclick="showFootDocForm();">Documentar Pie de Página</button>
+    </div>
+    
+    <div class="documentation-form hidden" id="headerDocForm">
+        <h3>Documentación de Cabecera</h3>
+        <label for="headerAuthorInput">Autor</label>
+        <br>
+        <input id="headerAuthorInput" placeholder="Nombres de los Autores" type="text" />
+        <br>
+        <br>
+        <label for="headerDateInput">Fecha de Creación</label>
+        <br>
+        <input id="headerDateInput" type="date">
+        <br>
+        <br>
+        <label for="headerNameInput">Nombre</label>
+        <br>
+        <input id="headerNameInput" placeholder="Nombre del Objeto o Archivo" type="text" />
+        <br>
+        <br>
+        <label for="headerDescInput">Descripción</label>
+        <br>
+        <input id="headerDescInput" placeholder="Breve Descripción del Objeto" type="text"></input>
+        <br>
+        <br>
+        <button>Aplicar Cambios</button>
+    </div>
+    
+    <div class="documentation-form hidden" id="methodDocForm">
+        <h3>Documentación de Método</h3>
+        <label for="methodNameInput">Nombre</label>
+        <br>
+        <input id="methodNameInput" type="text" placeholder="Nombre del Método" />
+        <br>
+        <br>
+        <label for="methodDescInput">Descripción</label>
+        <br>
+        <input id="methodDescInput" placeholder="Descripción" type="text"></input>
+        <br>
+        <br>
+        <div class="select-wrapper">
+        <label for="methodVarSelectInput">Parámetro</label>
+            <select id="methodVarSelectInput" onchange="loadVariableData();">
+                <option>Nuevo Parámetro</option>
+                <option>parametro_a</option>
+                <option>parametro_b</option>
+                <option>parametro_c</option>
+            </select>    
+        </div>
+        <br>
+        
+        <label for="methodVarNameInput">Nombre del Parámetro</label>
+        <input id="methodVarNameInput" placeholder="Nombre de Variable" type="text" />
+        <br>
+        <br>
+        <label for="methodVarTypeInput">Tipo del Parámetro</label>
+        <input id="methodVarTypeInput" placeholder="Tipo de Variable" type="text" />
+        <br>
+        <br>
+        <label for="methodVarDescInput">Descripción del Parámetro</label>
+        <input id="methodVarDescInput" placeholder="Descripción de Variable" type="text" />
+        <br>
+        <br>
+        <label for="methodVarReturnTypeInput">Tipo del Valor de Retorno</label>
+        <input id="methodVarReturnTypeInput" placeholder="Tipo del Valor de Retorno" type="text" />
+        <br>
+        <br>
+        <button>Aplicar Cambios</button>
+    </div>
+    
+    <div class="documentation-form hidden" id="variableDocForm">
+        <h3>Documentación de Variable</h3>
+        <label for="varNameInput">Nombre de Variable</label>
+        <input id="varNameInput" placeholder="Nombre de la Variable" type="text" />
+        <br>
+        <br>
+        <label for="varTypeInput">Tipo de la Variable</label>
+        <input id="varTypeInput" placeholder="Tipo de la Variable" type="text" />
+        <br>
+        <br>
+        <label for="varDescInput">Descripción de la Variable</label>
+        <input id="varDescInput" placeholder="Descripción de la Variable" type="text" />
+        <br>
+        <br>
+        <button>Aplicar Cambios</button>
+    </div>
+    
+    <div class="documentation-form hidden" id="footDocForm">
+        <h3>Documentación de Pie de Página</h3>
+        <div class="select-wrapper">
+            <label for="footChangeSelectInput">Cambio</label>
+            <select id="footChangeSelectInput">
+                <option>Nuevo Cambio</option>
+                <option>Cambio 1</option>
+                <option>Cambio 2</option>
+                <option>Cambio 3</option>
+            </select>
+        </div>
+        <br>
+        <label for="footChangeDescInput">Descripción del Cambio</label>
+        <input id="footChangeDescInput" placeholder="Descripción del Cambio" type="text" />
+        <br>
+        <br>
+        <div class="select-wrapper">
+            <label>Dependencia</label>
+            <select id="footDependSelectInput">
+                <option>Nueva Dependencia</option>
+                <option>Dependencia 1</option>
+                <option>Dependencia 2</option>
+                <option>Dependencia 3</option>
+            </select>
+        </div>
+        <br>
+        <label for="footDependDescInput">Descripción de la Dependencia</label>
+        <input id="footDependDescInput" placeholder="Descripción de la Dependencia" type="text" />
+        <br>
+        <br>
+        <label for="footDependVersionInput">Versión</label>
+        <input id="footDependVersionInput" placeholder="1.0.0" type="text" />
+        <br>
+        <br>
+        <button>Aplicar Cambios</button>
+    </div>
+
 
 </body>
 
