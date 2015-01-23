@@ -66,6 +66,14 @@
 
 				<span class="help-block">Paste your JS in the area above</span>
 				<!--</div>-->
+				<!-- Documentation generation options are shown below -->
+				<div class="container">
+					<div class="well">
+						<button id="generateButton" onclick="showOutputDialog();" class="btn btn-primary btn-large"><strong>Generate</strong></button>
+						<button id="clearButton" class="btn btn-primary btn-large" onclick="clearCodeArea();"><strong>Clear Code Area</strong></button>
+						<button id="toggleButton" onclick="toggleView();" class="btn btn-primary btn-large"><strong>Toggle View</strong></button>
+					</div>
+				</div>
 			</div>
 			
 			<div class="control-group tab-pane" id="fileInput">
@@ -74,15 +82,8 @@
 				</div>
 				<span class="help-block">Submit a file for processing; we'll take care of the rest :)</span>
 			</div>
-
+			
 			<br>
-
-			<!-- Documentation generation options are shown below -->
-			<div class="well">
-				<button id="generateButton" onclick="showOutputDialog();" class="btn btn-primary btn-large"><strong>Generate</strong></button>
-				<button id="clearButton" class="btn btn-primary btn-large"><strong>Clear Code Area</strong></button>
-			</div>
-
 		</div>
 
 

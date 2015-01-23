@@ -32,7 +32,7 @@ function hideTab(tab) {
 
 function showOutputDialog() {
 	"use strict";
-	document.getElementById('outputcontent').showModal();
+	document.getElementById('outputContent').showModal();
 }
 
 function highlightFormattedCode() {
@@ -92,6 +92,13 @@ function updateFormattedCode() {
 	formattedCode.innerHTML = rawCode.value;
 }
 
+function clearCodeArea() {
+	"use strict";
+	var rawCode;
+	rawCode = document.getElementById('rawCode');
+	rawCode.value = '';
+}
+
 /*
 	Documentation Forms Methods
 */
@@ -137,6 +144,27 @@ function showFootDocForm() {
     hideForm('variableDocForm');
 }
 
+function toggleView() {
+	"use strict";
+	var rawCode, formattedCode, scrollValue;
+	rawCode = document.getElementById('rawCode');
+	formattedCode = document.getElementById('formattedCode');
+			
+	if (rawCode.className === 'hidden') {
+		scrollValue = formattedCode.scrollTop;
+		setClassName('formattedCodeWrapper', 'hidden');
+		setClassName('rawCode', 'undefined');
+		rawCode.scrollTop = scrollValue;
+	} else {
+		scrollValue = rawCode.scrollTop;
+		setClassName('rawCode', 'hidden');
+		setClassName('formattedCodeWrapper', 'scrollable');
+		formattedCode.scrollTop = scrollValue;
+		updateFormattedCode();
+		highlightFormattedCode();
+	}
+}
+
 /*
 	Event Methods
 */
@@ -150,23 +178,7 @@ window.onkeydown = function (event) {
 	
 	
 	if (commandKeyCodeSum === 243) {
-		var rawCode, formattedCode, scrollValue;
-		rawCode = document.getElementById('rawCode');
-		formattedCode = document.getElementById('formattedCode');
-			
-		if (rawCode.className === 'hidden') {
-			scrollValue = formattedCode.scrollTop;
-			setClassName('formattedCodeWrapper', 'hidden');
-			setClassName('rawCode', 'undefined');
-			rawCode.scrollTop = scrollValue;
-		} else {
-			scrollValue = rawCode.scrollTop;
-			setClassName('rawCode', 'hidden');
-			setClassName('formattedCodeWrapper', 'scrollable');
-			formattedCode.scrollTop = scrollValue;
-			updateFormattedCode();
-			highlightFormattedCode();
-		}
+		toggleView();
 	}
 	lastKeyPressed = event.keyCode;
 };
