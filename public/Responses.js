@@ -99,6 +99,28 @@ function clearCodeArea() {
 	rawCode.value = '';
 }
 
+function toggleView() {
+	"use strict";
+	var rawCode, formattedCode, scrollValue;
+	rawCode = document.getElementById('rawCode');
+	formattedCode = document.getElementById('formattedCode');
+			
+	if (rawCode.className === 'hidden') {
+		scrollValue = formattedCode.scrollTop;
+		setClassName('formattedCodeWrapper', 'hidden');
+		setClassName('rawCode', 'undefined');
+		rawCode.scrollTop = scrollValue;
+	} else {
+		scrollValue = rawCode.scrollTop;
+		setClassName('rawCode', 'hidden');
+		setClassName('formattedCodeWrapper', 'scrollable');
+		formattedCode.scrollTop = scrollValue;
+		updateFormattedCode();
+		highlightFormattedCode();
+	}
+}
+
+
 /*
 	Documentation Forms Methods
 */
@@ -110,6 +132,19 @@ function showForm(formID) {
 function hideForm(formID) {
     "use strict";
     setClassName(formID, 'hidden');
+}
+
+function showDocumentationMenu() {
+	"use strict";
+	var docMenu = document.getElementById('docMenu');
+	setClassName('docMenu', 'documentation-menu');
+	docMenu.style.top = y + 'px';
+	docMenu.style.left = x + 'px';
+}
+
+function hideDocumentationMenu(x, y) {
+	"use strict";
+	setClassName('docMenu', 'hidden');
 }
 
 function showHeaderDocForm() {
@@ -143,49 +178,3 @@ function showFootDocForm() {
     hideForm('headerDocForm');
     hideForm('variableDocForm');
 }
-
-function toggleView() {
-	"use strict";
-	var rawCode, formattedCode, scrollValue;
-	rawCode = document.getElementById('rawCode');
-	formattedCode = document.getElementById('formattedCode');
-			
-	if (rawCode.className === 'hidden') {
-		scrollValue = formattedCode.scrollTop;
-		setClassName('formattedCodeWrapper', 'hidden');
-		setClassName('rawCode', 'undefined');
-		rawCode.scrollTop = scrollValue;
-	} else {
-		scrollValue = rawCode.scrollTop;
-		setClassName('rawCode', 'hidden');
-		setClassName('formattedCodeWrapper', 'scrollable');
-		formattedCode.scrollTop = scrollValue;
-		updateFormattedCode();
-		highlightFormattedCode();
-	}
-}
-
-/*
-	Event Methods
-*/
-window.onkeydown = function (event) {
-	"use strict";
-	
-	if (lastKeyPressed !== event.keyCode) {
-		console.log('Key Pressed: ' + event.keyCode);
-		commandKeyCodeSum += event.keyCode;
-	}
-	
-	
-	if (commandKeyCodeSum === 243) {
-		toggleView();
-	}
-	lastKeyPressed = event.keyCode;
-};
-
-window.onkeyup = function (event) {
-	"use strict";
-	console.log('Key Lifted: ' + event.keyCode);
-	lastKeyPressed = undefined;
-	commandKeyCodeSum -= event.keyCode;
-};

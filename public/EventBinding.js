@@ -34,6 +34,11 @@ document.getElementById('rawCode').onchange = function (event) {
 	setClassName('generateButton', 'btn btn.primary btn-large');
 };
 
+document.getElementById('rawCode').ondblclick = function (event) {
+	"use strict";
+	showDocumentationMenu(event.clientX, event.clientY);
+};
+
 /*
 	Button events
 */
@@ -81,4 +86,34 @@ document.getElementById('varButton').onclick = function (event) {
 document.getElementById('footButton').onclick = function (event) {
 	"use strict";
 	showFootDocForm();
+};
+
+/*
+	Window event Methods
+*/
+window.onkeydown = function (event) {
+	"use strict";
+	
+	if (lastKeyPressed !== event.keyCode) {
+		console.log('Key Pressed: ' + event.keyCode);
+		commandKeyCodeSum += event.keyCode;
+	}
+	
+	
+	if (commandKeyCodeSum === 243) {
+		toggleView();
+	}
+	lastKeyPressed = event.keyCode;
+};
+
+window.onkeyup = function (event) {
+	"use strict";
+	console.log('Key Lifted: ' + event.keyCode);
+	lastKeyPressed = undefined;
+	commandKeyCodeSum -= event.keyCode;
+};
+
+window.onclick = function (event) {
+	"use strict";
+	hideDocumentationMenu();
 };
